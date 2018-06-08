@@ -1,0 +1,26 @@
+﻿<Page x:Class="Cabbage_Manager_TeamProject.PagesMenu.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cabbage_Manager_TeamProject.PagesMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="Registration">
+
+    <Grid>
+        <StackPanel VerticalAlignment ="Center" Name ="RegistrationPanel">
+            <TextBlock FontSize ="20" Margin ="10,10,10,5" HorizontalAlignment ="Center">Email</TextBlock>
+            <TextBox HorizontalAlignment ="Center" Width="200" Height ="30" Name ="RegisterEmailBox"></TextBox>
+            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center">Full Name</TextBlock>
+            <TextBox HorizontalAlignment ="Center" Width="200"  Height ="30" Name ="RegisterNameBox"></TextBox>
+            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center">Password</TextBlock>
+            <PasswordBox HorizontalAlignment ="Center" Width="200"  Height ="30" Name ="RegisterPasswordBox"></PasswordBox>
+            <Button Margin ="0,15,0,10" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="RegistrationSubmit" FontSize ="20" 
+                            VerticalContentAlignment ="Center">Register</Button>
+            <Button Margin ="0,5,0,10" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="Login" FontSize ="20" 
+                            VerticalContentAlignment ="Center">Login</Button>
+        </StackPanel>
+        <Button Name="button_Back" Content="Back" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="60" Height="40" Click="button_Back_Click" />
+    </Grid>
+</Page>

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Cabbage_Manager_TeamProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design/Core.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary> 
     </Application.Resources>
 </Application>

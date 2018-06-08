@@ -1,0 +1,23 @@
+﻿<Page x:Class="Cabbage_Manager_TeamProject.PagesMenu.Autorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cabbage_Manager_TeamProject.PagesMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="Autorization">
+    <Grid>
+        <StackPanel  Visibility ="Visible" Name ="LoginPanel" VerticalAlignment ="Center" >
+            <TextBlock FontSize ="20" Margin ="10,15,10,5" HorizontalAlignment ="Center">Email</TextBlock>
+            <TextBox HorizontalAlignment ="Center" Width="200" Height ="30" Name ="LoginEmailBox" FontSize="20" ></TextBox>
+            <TextBlock FontSize ="20" Margin ="10,10,10,5" HorizontalAlignment ="Center">Password</TextBlock>
+            <PasswordBox  HorizontalAlignment ="Center" Width="200"  Height ="30" FontSize="20" Name ="LoginPasswordBox"></PasswordBox>
+            <Button  Margin ="0,20,0,0" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="LoginSubmit" FontSize ="20" 
+                            VerticalContentAlignment ="Center" Click="LoginSubmit_Click" >Login</Button>
+            <Button Margin ="0,10,0,10" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="Registration" FontSize ="20" 
+                            VerticalContentAlignment ="Center" Click="Registration_Click" >Register</Button>
+        </StackPanel>
+        
+    </Grid>
+</Page>
