@@ -61,7 +61,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
 
             catch (Exception)
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Error!","Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

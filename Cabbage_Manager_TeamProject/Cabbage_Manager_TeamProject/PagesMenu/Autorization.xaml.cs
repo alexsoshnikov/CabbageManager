@@ -30,7 +30,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             var login = LoginEmailBox.Text == "alex";
             if (!(login))
             {
-                MessageBox.Show("Wrong login!");
+                MessageBox.Show("Wrong login!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
 
 
@@ -38,7 +38,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             var _password = LoginPasswordBox.Password == "123";
             if (!(_password))
             {
-                MessageBox.Show("Wrong password!");
+                MessageBox.Show("Wrong password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
 
             }
