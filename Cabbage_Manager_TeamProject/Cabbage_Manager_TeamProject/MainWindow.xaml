@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cabbage_Manager_TeamProject"
         mc:Ignorable="d"
-        Title="Cabbage Manager" Height="490" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Cabbage Manager" Height="490" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Window.Background>
+        <ImageBrush ImageSource="Design/Images/depositphotos_27056871-stock-illustration-vector-seamless-pattern-with-finance.jpg"/>
+    </Window.Background>
     <Grid>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" Source="PagesMenu/Autorization.xaml"/>
     </Grid>

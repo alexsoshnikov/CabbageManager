@@ -28,14 +28,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ComboBox Name="ComboBox_From" Grid.ColumnSpan="4"   Grid.Row="1" Grid.Column="2" Margin="10"/>
-        <ComboBox Name="ComboBox_To" Grid.ColumnSpan="4"   Grid.Row="2" Grid.Column="2" Margin="10"/>
-        <TextBlock Text="Transaction" Grid.Column="1" Grid.Row="0" FontSize="20" Grid.ColumnSpan="5" Margin="10" TextAlignment="Center" />
-        <TextBlock Text="From" Grid.Column="0" Grid.Row="1" FontSize="30" Grid.ColumnSpan="2" Margin="15,0,0,0" TextAlignment="Center" />
-        <TextBlock Text="To" Grid.Column="0" Grid.Row="2" FontSize="30" Grid.ColumnSpan="2" Margin="15,0,0,5" TextAlignment="Center" />
-        <TextBlock Text="Amount" Grid.Column="0" Grid.Row="3" FontSize="30" Grid.ColumnSpan="2" TextAlignment="Center" />
-        <TextBox Name="textBoxAmountTransaction" Grid.Column="2"  Grid.ColumnSpan="4" Grid.Row="3" Margin="8" FontSize="20" VerticalContentAlignment="Center"/>
-        <Button Name="button_Ok" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Margin="15" FontSize="20" Content="Ok" VerticalAlignment="Top"/>
+        <ComboBox Name="ComboBox_From" Grid.ColumnSpan="4" FontFamily="Comic Sans MS" Foreground="#FFFD9804"  Grid.Row="1" Grid.Column="2" Margin="10" Height="40"/>
+        <ComboBox  Name="ComboBox_To" Grid.ColumnSpan="4" FontFamily="Comic Sans MS" Foreground="#FFFD9804"  Grid.Row="2" Grid.Column="2" Margin="10" Height="40"/>
+        <TextBlock Text="Transaction"  FontFamily="Comic Sans MS" Foreground="#FF585555" FontWeight="Bold" Grid.Column="1" Grid.Row="0" FontSize="20" Grid.ColumnSpan="5" Margin="10" TextAlignment="Center" />
+        <TextBlock FontFamily="Comic Sans MS" Foreground="#FF585555" FontWeight="Bold" Text="From" Grid.Column="0" Grid.Row="1" FontSize="30" Grid.ColumnSpan="2" Margin="15,0,0,0" TextAlignment="Center" />
+        <TextBlock FontFamily="Comic Sans MS" Foreground="#FF585555" FontWeight="Bold" Text="To" Grid.Column="0" Grid.Row="2" FontSize="30" Grid.ColumnSpan="2" Margin="15,0,0,5" TextAlignment="Center" />
+        <TextBlock  FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" Text="Amount" Grid.Column="0" Grid.Row="3" FontSize="30" Grid.ColumnSpan="2" TextAlignment="Center" />
+        <TextBox FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{DynamicResource TextBoxStyle}" Name="textBoxAmountTransaction" Grid.Column="2"  Grid.ColumnSpan="4" Grid.Row="3" Margin="8" FontSize="20" VerticalContentAlignment="Center"/>
+        <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Ok" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Margin="15" FontSize="20" Content="Ok" VerticalAlignment="Top"/>
         
     </Grid>
 </Page>

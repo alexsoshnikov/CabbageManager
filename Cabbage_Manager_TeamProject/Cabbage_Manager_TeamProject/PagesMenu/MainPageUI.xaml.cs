@@ -61,7 +61,17 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
 
         private void Button_Change_User_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Autorization());
+            MessageBoxResult result = MessageBox.Show("Do you really want to change the user?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                NavigationService.Navigate(new Autorization());
+            }
+            else
+            {
+                NavigationService.Navigate(new MainPageUI());
+            }
+
         }
     }
 }

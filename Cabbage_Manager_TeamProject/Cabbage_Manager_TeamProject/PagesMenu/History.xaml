@@ -9,7 +9,7 @@
       Title="History" Margin="3">
 
     <Grid>
-        <ListBox Name="listBox_History" Margin="10,30,10,10" />
-        <TextBlock Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,10" FontSize= "20"/>
+        <ListBox Style="{StaticResource ListBoxStyle}" Name="listBox_History" Margin="10,30,10,10" />
+        <TextBlock FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,10" FontSize= "20"/>
     </Grid>
 </Page>

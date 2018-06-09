@@ -9,18 +9,19 @@
       Title="Registration">
 
     <Grid>
+        <TextBlock Text="Registration" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" FontSize="20" />
         <StackPanel VerticalAlignment ="Center" Name ="RegistrationPanel">
-            <TextBlock FontSize ="20" Margin ="10,10,10,5" HorizontalAlignment ="Center">Email</TextBlock>
-            <TextBox HorizontalAlignment ="Center" Width="200" Height ="30" Name ="RegisterEmailBox"></TextBox>
-            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center">Full Name</TextBlock>
-            <TextBox HorizontalAlignment ="Center" Width="200"  Height ="30" Name ="RegisterNameBox"></TextBox>
-            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center">Password</TextBlock>
-            <PasswordBox HorizontalAlignment ="Center" Width="200"  Height ="30" Name ="RegisterPasswordBox"></PasswordBox>
-            <Button Margin ="0,15,0,10" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="RegistrationSubmit" FontSize ="20" 
+            <TextBlock FontSize ="20" Margin ="10,10,10,5" HorizontalAlignment ="Center" FontFamily="Comic Sans MS" Foreground="#FF585555" FontWeight="Bold">Email</TextBlock>
+            <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment ="Center" FontSize="20" Width="200" Height ="40" Name ="RegisterEmailBox" FontFamily="Comic Sans MS" Foreground="#FFFD9804"></TextBox>
+            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold">Full Name</TextBlock>
+            <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment ="Center" FontSize="20" FontFamily="Comic Sans MS" Foreground="#FFFD9804" Width="200"  Height ="40" Name ="RegisterNameBox"></TextBox>
+            <TextBlock FontSize ="20" Margin ="10,5,10,5" HorizontalAlignment ="Center" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold">Password</TextBlock>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" HorizontalAlignment ="Center" FontSize="20" Width="200"  Height ="40" Name ="RegisterPasswordBox"></PasswordBox>
+            <Button Style="{StaticResource ButtonStyle}"  Margin ="0,15,0,10" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="RegistrationSubmit" FontSize ="20" 
                             VerticalContentAlignment ="Center">Register</Button>
-            <Button Margin ="0,5,0,10" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="Login" FontSize ="20" 
+            <Button Style="{StaticResource ButtonStyle}" Margin ="0,5,0,10" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="Login" FontSize ="20" 
                             VerticalContentAlignment ="Center">Login</Button>
         </StackPanel>
-        <Button Name="button_Back" Content="Back" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="60" Height="40" Click="button_Back_Click" />
+        <Button Name="button_Back" FontFamily="Comic Sans MS" Style="{StaticResource ButtonStyle}"  Foreground="#FFFD9804" Content="Back" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="60" Height="40" Click="button_Back_Click" />
     </Grid>
 </Page>
