@@ -45,7 +45,7 @@
 
         <Label x:Name="LabelToolBar" Content="UserName" FontSize="20" Margin="3" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}" HorizontalAlignment="Left" Margin="190,0,0,0"  Background="#FFFD9804"/>
-        <ComboBox SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment="Right"  Width="200"  />
+        <ComboBox SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment="Right" Height="30" Width="200"  />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}"  HorizontalAlignment="Left" Grid.Column="1"  Background="#FFFD9804" />
         <Label x:Name="CurrentTime" HorizontalAlignment="Center" Grid.Column="1"  FontSize="20" Margin="3" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold"/>
 
