@@ -83,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Design\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -191,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Design\Images\depositphotos_27056871-stock-illustration-vector-seamless-pattern-with-finance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\MainIcon.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

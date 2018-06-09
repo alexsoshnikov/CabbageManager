@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Design/Core.xaml"/>
                 <ResourceDictionary Source="Design/Brushes.xaml"/>
+                <ResourceDictionary Source="Design/Icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary> 
     </Application.Resources>

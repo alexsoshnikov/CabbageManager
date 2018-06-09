@@ -22,6 +22,11 @@
             <Button Style="{StaticResource ButtonStyle}" Margin ="0,5,0,10" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment ="Center" Height ="40" Width ="150" Name ="Login" FontSize ="20" 
                             VerticalContentAlignment ="Center">Login</Button>
         </StackPanel>
-        <Button Name="button_Back" FontFamily="Comic Sans MS" Style="{StaticResource ButtonStyle}"  Foreground="#FFFD9804" Content="Back" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="60" Height="40" Click="button_Back_Click" />
+        <Button Name="button_Back" FontFamily="Comic Sans MS" Style="{StaticResource ButtonStyle}"  Foreground="#FFFD9804" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="60" Height="40" Click="button_Back_Click" >
+            <Canvas Name="adobe_aftereffects" Width="48" Height="48">
+                <Path Width="40" Height="30" Canvas.Left="0" Canvas.Top="5.0795" Stretch="Fill" Fill="{StaticResource FillPath}" Data="{StaticResource arrow_left_rightStyle0}" />
+                <Border />
+            </Canvas>
+        </Button>
     </Grid>
 </Page>
