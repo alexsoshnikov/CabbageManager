@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Cabbage_Manager_Classes
 {
-    class User
+    public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-
+        public int BudgetId { get; set; }
     }
 }

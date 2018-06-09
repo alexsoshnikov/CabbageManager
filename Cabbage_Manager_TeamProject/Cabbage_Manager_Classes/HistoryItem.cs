@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cabbage_Manager_Classes
 {
-    class HistoryItem
+    public class HistoryItem
     {
         public int Id { get; set; }
         public string Type { get; set; }

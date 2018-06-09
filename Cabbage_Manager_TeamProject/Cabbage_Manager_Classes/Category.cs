@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Cabbage_Manager_Classes
 {
-    class Category
+    public class Category
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
         public string LinqToIcon { get; set; }
+        public string ColourCode { get; set; }
 
     }
 }

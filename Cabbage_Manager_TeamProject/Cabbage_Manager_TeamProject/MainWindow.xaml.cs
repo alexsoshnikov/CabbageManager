@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cabbage_Manager_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Cabbage_Manager_TeamProject
         public MainWindow()
         {
             InitializeComponent();
+            var repository = new RepositoryJson();
         }
     }
 }

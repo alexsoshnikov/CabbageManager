@@ -192,5 +192,11 @@
   <ItemGroup>
     <Resource Include="Design\Images\depositphotos_27056871-stock-illustration-vector-seamless-pattern-with-finance.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cabbage_Manager_Classes\Cabbage_Manager_Classes.csproj">
+      <Project>{BEFC1A19-6FD7-46F7-99E6-DD93396521F9}</Project>
+      <Name>Cabbage_Manager_Classes</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
