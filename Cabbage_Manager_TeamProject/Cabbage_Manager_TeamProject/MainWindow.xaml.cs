@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Data.SqlClient;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -25,6 +26,8 @@ namespace Cabbage_Manager_TeamProject
         {
             InitializeComponent();
             var repository = new RepositoryJson();
+            //var context = new Context();
+            //Title = context.Users.First().Name;
         }
     }
 }

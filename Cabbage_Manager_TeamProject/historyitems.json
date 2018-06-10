@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Type": "I",
+    "Amount": 10.0,
+    "Date": "2018-06-10T14:31:23.8675219+03:00",
+    "CategoryId": 1,
+    "UserEmail": "alex@mail.ru",
+    "UserBudget": null,
+    "DateRepresentation": "10.06 14:31"
+  },
+  {
+    "Id": 2,
+    "Type": "E",
+    "Amount": 100.0,
+    "Date": "2018-06-10T14:31:23.9125245+03:00",
+    "CategoryId": 1,
+    "UserEmail": "altyn@mail.ru",
+    "UserBudget": null,
+    "DateRepresentation": "10.06 14:31"
+  }
+]
