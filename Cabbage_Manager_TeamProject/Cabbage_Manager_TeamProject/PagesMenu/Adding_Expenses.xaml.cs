@@ -25,11 +25,6 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         {
             InitializeComponent();
             var repo = new RepositoryJson();
-            var a = "/Design/Images/MainIcon.PNG";
-            repo.categories.First().LinqToIcon = a.ToString();
-            listBox_Category.ItemsSource = repo.categories;
-            var b = "#FF981212";
-            repo.categories.First().ColourCode = b;
             listBox_Category.ItemsSource = repo.categories; 
         }
 

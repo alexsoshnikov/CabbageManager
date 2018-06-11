@@ -55,16 +55,16 @@ namespace Cabbage_Manager_Classes
         {
             /*
             categories = new List<Category>();
-            categories.Add(new Category { Id = 1, Name = "Food", ColourCode = "#FF7F50" });
-            categories.Add(new Category { Id = 2, Name = "Eating out", ColourCode = "#DC143C" });
-            categories.Add(new Category { Id = 3, Name = "Entertainment", ColourCode = "#DB7093" });
-            categories.Add(new Category { Id = 4, Name = "Transport", ColourCode = "##8FBC8F" });
-            categories.Add(new Category { Id = 5, Name = "Health and beauty", ColourCode = "#6B8E23" });
-            categories.Add(new Category { Id = 6, Name = "Clothes", ColourCode = "#A52A2A" });
-            categories.Add(new Category { Id = 7, Name = "Purchases", ColourCode = "#D2B48C" });
+            categories.Add(new Category { Id = 1, Name = "Food", ColourCode = "#FF7F50", LinqToIcon= "/Design/Images/Food.PNG" });
+            categories.Add(new Category { Id = 2, Name = "Eating out", ColourCode = "#DC143C", LinqToIcon = "/Design/Images/EatingOut.PNG" });
+            categories.Add(new Category { Id = 3, Name = "Entertainment", ColourCode = "#DB7093", LinqToIcon = "/Design/Images/Entertainment.PNG" });
+            categories.Add(new Category { Id = 4, Name = "Transport", ColourCode = "##8FBC8F", LinqToIcon = "/Design/Images/Transport.PNG" });
+            categories.Add(new Category { Id = 5, Name = "Health and beauty", ColourCode = "#6B8E23", LinqToIcon = "/Design/Images/Health.PNG" });
+            categories.Add(new Category { Id = 6, Name = "Clothes", ColourCode = "#A52A2A", LinqToIcon = "/Design/Images/Clothes.PNG" });
+            categories.Add(new Category { Id = 7, Name = "Internet and the electronics", ColourCode = "#4682B4", LinqToIcon = "/Design/Images/Internet.PNG" });
+            categories.Add(new Category { Id = 8, Name = "Purchases", ColourCode = "#D2B48C", LinqToIcon = "/Design/Images/Purchases.PNG" });
             SaveList(categoriesFileName, categories);
             
-
             userBudgets = new List<UserBudget>();
             userBudgets.Add(new UserBudget { Id = 1, CashSum = 100, CreditCardSum = 100, TotalBalance = 200 });
             userBudgets.Add(new UserBudget { Id = 2, CashSum = 1000, CreditCardSum = 1000, TotalBalance = 2000 });
@@ -85,6 +85,7 @@ namespace Cabbage_Manager_Classes
 
         private void Restore()
         {
+            // интернет добавить
             categories = RestoreList<Category>(categoriesFileName);
             users = RestoreList<User>(usersFileName);
             historyItems = RestoreList<HistoryItem>(historyItemsFileName);

@@ -2,43 +2,49 @@
   {
     "Id": 1,
     "Name": "Food",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Food.PNG",
     "ColourCode": "#FF7F50"
   },
   {
     "Id": 2,
     "Name": "Eating out",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/EatingOut.PNG",
     "ColourCode": "#DC143C"
   },
   {
     "Id": 3,
     "Name": "Entertainment",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Entertainment.PNG",
     "ColourCode": "#DB7093"
   },
   {
     "Id": 4,
     "Name": "Transport",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Transport.PNG",
     "ColourCode": "##8FBC8F"
   },
   {
     "Id": 5,
     "Name": "Health and beauty",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Health.PNG",
     "ColourCode": "#6B8E23"
   },
   {
     "Id": 6,
     "Name": "Clothes",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Clothes.PNG",
     "ColourCode": "#A52A2A"
   },
   {
     "Id": 7,
+    "Name": "Internet and the electronics",
+    "LinqToIcon": "/Design/Images/Internet.PNG",
+    "ColourCode": "#4682B4"
+  },
+  {
+    "Id": 8,
     "Name": "Purchases",
-    "LinqToIcon": null,
+    "LinqToIcon": "/Design/Images/Purchases.PNG",
     "ColourCode": "#D2B48C"
   }
 ]
