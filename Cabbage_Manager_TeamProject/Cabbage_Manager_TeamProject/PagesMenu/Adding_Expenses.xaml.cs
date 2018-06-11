@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cabbage_Manager_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,10 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         public Adding_Expenses()
         {
             InitializeComponent();
+            var repo = new RepositoryJson();
+            var a = "/Design/Images/MainIcon.PNG";
+            repo.categories.First().LinqToIcon = a.ToString();
+            listBox_Category.ItemsSource = repo.categories;
         }
 
         private void button_TakeAmount_Click(object sender, RoutedEventArgs e)
