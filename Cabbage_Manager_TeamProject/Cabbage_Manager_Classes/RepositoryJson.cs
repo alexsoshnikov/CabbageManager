@@ -23,7 +23,7 @@ namespace Cabbage_Manager_Classes
 
         public RepositoryJson()
         {
-            Save();
+            //Save();
             Restore();
         }
         private List<T> RestoreList<T>(string fileName)
@@ -63,7 +63,7 @@ namespace Cabbage_Manager_Classes
             categories.Add(new Category { Id = 6, Name = "Clothes", ColourCode = "#A52A2A" });
             categories.Add(new Category { Id = 7, Name = "Purchases", ColourCode = "#D2B48C" });
             SaveList(categoriesFileName, categories);
-            */
+            
 
             userBudgets = new List<UserBudget>();
             userBudgets.Add(new UserBudget { Id = 1, CashSum = 100, CreditCardSum = 100, TotalBalance = 200 });
@@ -79,7 +79,7 @@ namespace Cabbage_Manager_Classes
             users.Add(new User { Id = 1, Name = "Alex", Password = "123", Email="alex@mail.ru" });
             users.Add(new User { Id = 2, Name = "Altyn", Password = "123", Email = "altyn@mail.ru" });
             SaveList(usersFileName, users);
-            
+            */
         }
 
 
