@@ -28,26 +28,26 @@
 
         <StackPanel Visibility ="Visible" Name ="MainMenu" Grid.Column="1" Margin="5" Grid.Row="1" >
             <Separator  Background="#FFFD9804"/>
-            <Button  FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_History" Height="50" Margin="2" Width="190" FontSize="17" Click="Button_History_Click">History</Button>
+            <Button  FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_History" Height="50" Margin="2" Width="190" FontSize="17" Click="Button_History_Click">History</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Adding_Expenses" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Adding_Expenses_Click" >Adding Expenses</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Adding_Expenses" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Adding_Expenses_Click" >Adding Expenses</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Adding_Revenues" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Adding_Revenues_Click" >Adding Revenues</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Adding_Revenues" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Adding_Revenues_Click" >Adding Revenues</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Transaction" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Transaction_Click" >Transaction</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Transaction" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Transaction_Click" >Transaction</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Reports"  Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Reports_Click" >Reports</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Reports"  Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Reports_Click" >Reports</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Comic Sans MS" Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Change_User"  Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Change_User_Click" >Change user</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Change_User"  Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Change_User_Click" >Change user</Button>
             <Separator  Background="#FFFD9804" />
         </StackPanel>
         <Separator Grid.Column="0" VerticalAlignment="Top" Grid.Row="1" Margin="0,7,0,0"  Background="#FFFD9804"/>
 
-        <Label x:Name="LabelToolBar" Content="UserName" FontSize="20" Margin="3" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
+        <Label x:Name="LabelToolBar" Content="UserName" FontSize="20" Margin="3" FontFamily="Malgun Gothic"  Foreground="#FF585555" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}" HorizontalAlignment="Left" Margin="190,0,0,0"  Background="#FFFD9804"/>
-        <ComboBox SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Comic Sans MS" Foreground="#FFFD9804" HorizontalAlignment="Right" Height="30" Width="200"  />
+        <ComboBox SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" HorizontalAlignment="Right" Height="30" Width="200"  />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}"  HorizontalAlignment="Left" Grid.Column="1"  Background="#FFFD9804" />
-        <Label x:Name="CurrentTime" HorizontalAlignment="Center" Grid.Column="1"  FontSize="20" Margin="3" FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold"/>
+        <Label x:Name="CurrentTime" HorizontalAlignment="Center" Grid.Column="1"  FontSize="20" Margin="3" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold"/>
 
     </Grid>
 </Page>

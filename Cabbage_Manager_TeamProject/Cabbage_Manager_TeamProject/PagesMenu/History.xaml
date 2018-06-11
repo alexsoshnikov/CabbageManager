@@ -14,14 +14,14 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock FontFamily="Comic Sans MS"  Foreground="#FF585555" FontWeight="Bold" Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,3" FontSize= "20"/>
+        <TextBlock FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,3" FontSize= "20"/>
         <StackPanel Grid.Row="1" Width="330" Orientation="Horizontal" Name="h" Margin="50,0,10,0">
             <TextBlock Margin="5" FontSize="15" Width="75" Text=" Date "/>
             <TextBlock Margin="5" FontSize="15" Width="55" Text=" Bill "/>
             <TextBlock Margin="5" FontSize="15" Width="80" Text=" Category "/>
             <TextBlock Margin="5" FontSize="15" Width="85" Text=" Amount "/>
         </StackPanel>
-        <ListBox  Grid.Row="2"  Style="{StaticResource ListBoxStyle}" Name="listBox_History" Margin="10,10,10,10">
+        <ListBox VirtualizingPanel.ScrollUnit="Pixel"  Grid.Row="2"  Style="{StaticResource ListBoxStyle}" Name="listBox_History" Margin="10,10,10,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Name="f">

@@ -65,12 +65,13 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
             pathDictionary.Add(path, ps);
             path.MouseEnter += new MouseEventHandler(Path_MouseEnter);
             path.MouseMove += new MouseEventHandler(Path_MouseMove);
+            path.MouseLeave += new MouseEventHandler(PieControl_MouseLeave);
         }
 
         void Path_MouseMove(object sender, MouseEventArgs e)
         {
             Point point = Mouse.GetPosition(this);
-            piePopup.Margin = new Thickness(point.X - piePopup.ActualWidth / 4, point.Y - (18 + piePopup.ActualHeight), 0, 0);
+            piePopup.Margin = new Thickness(point.X - piePopup.ActualWidth / 4, point.Y - (18 + piePopup.ActualHeight), 0, 50);
         }
 
         private void PieControl_MouseLeave(object sender, MouseEventArgs e)
@@ -84,7 +85,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
             PieSegment seg = pathDictionary[sender as Path];
             popupData.Text = seg.Name + " : " + ((seg.Value / Data.GetTotal()) * 100).ToString("N2") + "%";
             Point point = Mouse.GetPosition(this);
-            piePopup.Margin = new Thickness(point.X - piePopup.ActualWidth / 4, point.Y - (18 + piePopup.ActualHeight), 0, 0);
+            piePopup.Margin = new Thickness(point.X - piePopup.ActualWidth / 4, point.Y - (18 + piePopup.ActualHeight), 0, 50);
         }
 
         void ClearPathDictionary()
@@ -93,6 +94,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
             {
                 path.MouseEnter -= Path_MouseEnter;
                 path.MouseMove -= Path_MouseMove;
+                path.MouseLeave -= PieControl_MouseLeave;
                 
 
             }
