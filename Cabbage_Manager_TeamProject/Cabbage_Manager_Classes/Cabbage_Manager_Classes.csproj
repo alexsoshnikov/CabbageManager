@@ -59,9 +59,9 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\HistoryItem.cs" />
-    <Compile Include="Migrations\201806111918089_FirstMigration.cs" />
-    <Compile Include="Migrations\201806111918089_FirstMigration.Designer.cs">
-      <DependentUpon>201806111918089_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201806112007557_First.cs" />
+    <Compile Include="Migrations\201806112007557_First.Designer.cs">
+      <DependentUpon>201806112007557_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     <Compile Include="Classes\UserBudget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806111918089_FirstMigration.resx">
-      <DependentUpon>201806111918089_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806112007557_First.resx">
+      <DependentUpon>201806112007557_First.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EmbeddedResource Include="Data\users.json" />
