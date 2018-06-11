@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using Cabbage_Manager_Classes;
 
 namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
 {
@@ -51,14 +52,14 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
        
         Color MakeSecondColor(Color color, uint difference)
         {
-            difference = difference > 100 ? 100 : difference;
+            difference = difference > 1 ? 1 : difference;
             byte r = GetNewColorByte(color.R, difference);
             byte g = GetNewColorByte(color.G, difference);
             byte b = GetNewColorByte(color.B, difference);
             return Color.FromRgb(r, g, b);
         }
 
-        
+
         byte GetNewColorByte(byte oldByte, uint difference)
         {
             if (oldByte + difference > 255)

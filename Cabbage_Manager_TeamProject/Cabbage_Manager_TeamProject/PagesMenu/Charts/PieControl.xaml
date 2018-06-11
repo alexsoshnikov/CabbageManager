@@ -13,7 +13,7 @@
             <Canvas Name="drawingCanvas">
                 <ed:Callout Name="piePopup" Visibility="Hidden" AnchorPoint="0.25,1.5" Panel.ZIndex="1" CalloutStyle="Rectangle" FontSize="12" Stroke="Black" Fill="{Binding PopupBrush}">
                     <Border BorderBrush="{x:Null}" Height="30">
-                        <TextBlock Name="popupData" Width="120" TextAlignment="Center" TextWrapping="Wrap" Text="Some Text" VerticalAlignment="Center"/>
+                        <TextBlock Name="popupData" Width="120" TextAlignment="Center" TextWrapping="Wrap" Text="Some Text" VerticalAlignment="Center" />
                     </Border>
                 </ed:Callout>
             </Canvas>

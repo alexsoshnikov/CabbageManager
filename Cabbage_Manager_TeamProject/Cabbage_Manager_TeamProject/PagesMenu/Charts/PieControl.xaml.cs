@@ -75,12 +75,12 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
 
         private void PieControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            piePopup.Visibility = System.Windows.Visibility.Collapsed;
+            piePopup.Visibility = Visibility.Collapsed;
         }
 
         void Path_MouseEnter(object sender, MouseEventArgs e)
         {
-            piePopup.Visibility = System.Windows.Visibility.Visible;
+            piePopup.Visibility = Visibility.Visible;
             PieSegment seg = pathDictionary[sender as Path];
             popupData.Text = seg.Name + " : " + ((seg.Value / Data.GetTotal()) * 100).ToString("N2") + "%";
             Point point = Mouse.GetPosition(this);
@@ -93,6 +93,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
             {
                 path.MouseEnter -= Path_MouseEnter;
                 path.MouseMove -= Path_MouseMove;
+                
+
             }
             pathDictionary.Clear();
         }
