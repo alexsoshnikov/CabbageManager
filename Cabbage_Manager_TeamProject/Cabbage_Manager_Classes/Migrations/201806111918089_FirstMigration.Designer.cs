@@ -13,7 +13,7 @@ namespace Cabbage_Manager_Classes.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201806101149372_FirstMigration"; }
+            get { return "201806111918089_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source

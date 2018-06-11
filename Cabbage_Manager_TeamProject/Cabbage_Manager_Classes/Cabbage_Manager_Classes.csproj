@@ -56,22 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
+    <Compile Include="Classes\Category.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="HistoryItem.cs" />
-    <Compile Include="Migrations\201806101149372_FirstMigration.cs" />
-    <Compile Include="Migrations\201806101149372_FirstMigration.Designer.cs">
-      <DependentUpon>201806101149372_FirstMigration.cs</DependentUpon>
+    <Compile Include="Classes\HistoryItem.cs" />
+    <Compile Include="Migrations\201806111918089_FirstMigration.cs" />
+    <Compile Include="Migrations\201806111918089_FirstMigration.Designer.cs">
+      <DependentUpon>201806111918089_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryJson.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserBudget.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserBudget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806101149372_FirstMigration.resx">
-      <DependentUpon>201806101149372_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806111918089_FirstMigration.resx">
+      <DependentUpon>201806111918089_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EmbeddedResource Include="Data\users.json" />

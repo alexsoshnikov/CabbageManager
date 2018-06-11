@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cabbage_Manager_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         public History()
         {
             InitializeComponent();
+            var repository = new RepositoryJson();
+            var context = new Context();
+            foreach (var historyItem in context.TotalHistory)
+            {
+                historyItem.Category = repository.categories.FirstOrDefault(cat => cat.Id == historyItem.CategoryId);
+            }
+            listBox_History.ItemsSource = context.TotalHistory.ToList();
         }
     }
 }

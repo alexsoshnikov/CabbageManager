@@ -14,9 +14,10 @@ namespace Cabbage_Manager_Classes
         public decimal Amount { get; set; }
         public DateTime Date { get; set; }
         public int CategoryId { get; set; }
-        //public int UserBudgetId { get; set; }
         public string UserEmail { get; set; }
         public virtual UserBudget UserBudget { get; set; }
+        [NotMapped]
+        public Category Category { get; set; }
 
         public string DateRepresentation { get; set; }
 
