@@ -26,8 +26,6 @@ namespace Cabbage_Manager_TeamProject
         {
             InitializeComponent();
             var repository = new RepositoryJson();
-            //var context = new Context();
-            //Title = context.Users.First().Name;
         }
     }
 }
