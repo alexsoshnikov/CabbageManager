@@ -206,5 +206,29 @@
   <ItemGroup>
     <Resource Include="Design\Images\MainIcon.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Food.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Health.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Purchases.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\EatingOut.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Internet.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Clothes.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Transport.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Entertainment.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

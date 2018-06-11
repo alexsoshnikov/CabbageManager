@@ -4,13 +4,13 @@
     "TotalBalance": 200.0,
     "CashSum": 100.0,
     "CreditCardSum": 100.0,
-    "UserEmail": "alex@mail.ru"
+    "UserEmail": null
   },
   {
     "Id": 2,
     "TotalBalance": 2000.0,
     "CashSum": 1000.0,
     "CreditCardSum": 1000.0,
-    "UserEmail": "altyn@mail.ru"
+    "UserEmail": null
   }
 ]
