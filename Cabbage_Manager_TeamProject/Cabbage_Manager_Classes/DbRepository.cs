@@ -36,9 +36,9 @@ namespace Cabbage_Manager_Classes
 
         public bool Authorize(string login, string password)
         {
+            users = Context.Users.ToList();
             var Hash = GetHash(password);
             var user = users.FirstOrDefault(u => u.Email == login && u.Password == Hash);
-            //КАК ТУТ СДЕЛАТЬ - АВТОРИЗАИЮ ПО МЫЛУ ИЛИ ПО ИМЕНИ?
             if (user != null)
             {
                 _authorizedUser = user;
@@ -58,18 +58,20 @@ namespace Cabbage_Manager_Classes
             var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
             return Convert.ToBase64String(hash);
         }
-        
-        public User CreateNewUser(string name, string email, string password)
-        {
-            var user = new User { Name = name, Email = email, Password = GetHash(password) };
-            Context.Users.Add(user);
-            return user;
-        }
 
         public void RegisterUser(User user)
         {
-            _authorizedUser = user;
-            Context.Users.Add(user);
+            //_authorizedUser = user;
+            if (user != null)
+            {
+                UI_Logic.errorRegistrationText = string.Empty;
+                Context.Users.Add(user);
+                Save();
+            }
+            else
+            {
+                throw new SystemException(UI_Logic.errorRegistrationText);
+            }
         }
         public void Save()
         {
