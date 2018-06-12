@@ -21,18 +21,13 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class History : Page
     {
+        UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
+
         public History()
         {
             InitializeComponent();
-            var repository = new RepositoryJson();
-            
-            var context = new Context();
-            foreach (var historyItem in context.TotalHistory)
-            {
-                historyItem.Category = repository.categories.FirstOrDefault(cat => cat.Id == historyItem.CategoryId);
-            }
-            listBox_History.ItemsSource = context.TotalHistory.ToList();
-            
+            _ui_logic.UpdateHistory();
+            listBox_History.ItemsSource = _ui_logic.ShowHistoryForCurrentUser();
         }
     }
 }

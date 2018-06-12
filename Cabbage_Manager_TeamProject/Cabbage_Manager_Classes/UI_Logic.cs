@@ -17,11 +17,11 @@ namespace Cabbage_Manager_Classes
         {
             if (!Emailcheck(email))
             {
-                errorRegistrationText += "email is not valid\n";
+                errorRegistrationText += "- Email is not valid\n";
             }
             if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password))
             {
-                errorRegistrationText += "some fields are empty\n";
+                errorRegistrationText += "- Some fields are empty\n";
             }
             if (!String.IsNullOrEmpty(errorRegistrationText))
             {
@@ -35,6 +35,65 @@ namespace Cabbage_Manager_Classes
         {
             return Regex.IsMatch(email,
              @"^[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+        }
+        public decimal Calculate(string formula)
+        {
+            decimal c = 0;
+            if (formula.Contains('+') || formula.Contains('-'))
+            {
+                string[] sum = formula.Split('+');
+                for (int j = 0; j < sum.Length; j++)
+                {
+                    if (sum[j].Contains('-'))
+                    {
+                        string[] devis = sum[j].Split('-');
+                        decimal f = Convert.ToDecimal(devis[0]);
+                        for (int i = 1; i < devis.Length; i++)
+                        {
+                            f -= Convert.ToDecimal(devis[i]);
+                        }
+                        sum[j] = Convert.ToString(f);
+                    }
+                }
+                for (int i = 0; i < sum.Length; i++)
+                {
+                    c += Convert.ToDecimal(sum[i]);
+                }
+            }
+            else
+                c= Convert.ToDecimal(formula);
+            return c;
+        }
+        public bool CheckAmountFormValid (string amountText)
+        {
+            var valid = false;
+            try
+            {
+               var result = Convert.ToDecimal(amountText);
+                if (result > 0)
+                {
+                    valid = true;
+                }
+            }
+            catch (Exception)
+            {
+                valid = false;
+            }
+            return valid;
+        }
+        public void UpdateHistory()
+        {
+            _repo.historyItems = _repo.Context.TotalHistory.ToList();
+            var json = new RepositoryJson();
+            foreach (var historyItem in _repo.historyItems)
+            {
+                if (historyItem.Category == null)
+                    historyItem.Category = json.categories.FirstOrDefault(cat => cat.Id == historyItem.CategoryId);
+            }
+        }
+        public List<HistoryItem> ShowHistoryForCurrentUser()
+        {
+            return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).OrderByDescending(historyItem => historyItem.Date).ToList();
         }
 
     }

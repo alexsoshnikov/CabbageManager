@@ -25,7 +25,7 @@
   },
   {
     "Id": 5,
-    "Name": "Health and beauty",
+    "Name": "Health",
     "LinqToIcon": "/Design/Images/Health.PNG",
     "ColourCode": "#6B8E23"
   },
@@ -37,7 +37,7 @@
   },
   {
     "Id": 7,
-    "Name": "The Internet and electronics",
+    "Name": "The Internet",
     "LinqToIcon": "/Design/Images/Internet.PNG",
     "ColourCode": "#4682B4"
   },

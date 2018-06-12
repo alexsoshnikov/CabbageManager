@@ -85,9 +85,9 @@ namespace Cabbage_Manager_Classes
         private void Restore()
         {
             categories = RestoreList<Category>(categoriesFileName);
-            users = RestoreList<User>(usersFileName);
-            historyItems = RestoreList<HistoryItem>(historyItemsFileName);
-            userBudgets= RestoreList<UserBudget>(userbudgetsFileName);
+            //users = RestoreList<User>(usersFileName);
+            //historyItems = RestoreList<HistoryItem>(historyItemsFileName);
+            //userBudgets= RestoreList<UserBudget>(userbudgetsFileName);
         }
 
     }

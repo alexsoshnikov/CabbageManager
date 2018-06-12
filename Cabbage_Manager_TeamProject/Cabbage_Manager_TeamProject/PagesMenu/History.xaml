@@ -14,25 +14,25 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,3" FontSize= "20"/>
-        <StackPanel Grid.Row="1" Width="330" Orientation="Horizontal" Name="h" Margin="50,0,10,0">
-            <TextBlock Margin="5" FontSize="15" Width="75" Text=" Date "/>
-            <TextBlock Margin="5" FontSize="15" Width="55" Text=" Bill "/>
-            <TextBlock Margin="5" FontSize="15" Width="80" Text=" Category "/>
-            <TextBlock Margin="5" FontSize="15" Width="85" Text=" Amount "/>
+        <TextBlock FontFamily="Malgun Gothic" Foreground="#FF585555" FontWeight="Bold" Text="History" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,3,10,3" FontSize= "20"/>
+        <StackPanel Grid.Row="1" Width="330" Orientation="Horizontal" Name="h" Margin="35,0,10,0">
+            <TextBlock Margin="5" FontSize="15" FontWeight="Bold" Width="75" Text=" Date "/>
+            <TextBlock Margin="5" FontSize="15" FontWeight="Bold" Width="60" Text=" Bill "/>
+            <TextBlock Margin="5" FontSize="15" FontWeight="Bold" Width="75" Text=" Category "/>
+            <TextBlock Margin="5" FontSize="15" FontWeight="Bold" Width="85" Text=" Amount "/>
         </StackPanel>
-        <ListBox VirtualizingPanel.ScrollUnit="Pixel"  Grid.Row="2"  Style="{StaticResource ListBoxStyle}" Name="listBox_History" Margin="10,10,10,10">
+        <ListBox VirtualizingPanel.ScrollUnit="Pixel" Grid.Row="2"  Style="{StaticResource ListBoxStyle}" Name="listBox_History" Margin="10,10,10,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Name="f">
                         <StackPanel.Background>
-                            <SolidColorBrush Color="{Binding ColourCode}" />
+                            <SolidColorBrush Color="{Binding Category.ColourCode}" />
                         </StackPanel.Background>
-                        <Image Margin="3" Width="30" Height="30" Source ="{Binding Category.LinqToIcon}"/>
-                        <TextBlock Margin="5" FontSize="15" Width="85" Text="{Binding DateRepresentation}"/>
-                        <TextBlock Margin="5" FontSize="15" Width="45" Text="{Binding Type}"/>
-                        <TextBlock Margin="5" FontSize="15" Width="85" Text="{Binding Category.Name}"/>
-                        <TextBlock Margin="5" FontSize="15" Width="85" Text="{Binding Amount}"/>
+                        <Image Margin="3" Width="25" Height="25" Source ="{Binding Category.LinqToIcon}"/>
+                        <TextBlock Margin="5" FontSize="14" Width="70" Text="{Binding DateRepresentation}"/>
+                        <TextBlock Margin="5" FontSize="14" Width="75" Text="{Binding Type}"/>
+                        <TextBlock Margin="5" FontSize="14" Width="90" Text="{Binding Category.Name}"/>
+                        <TextBlock Margin="5" FontSize="14" Width="50" Text="{Binding Amount}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

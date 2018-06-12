@@ -73,6 +73,13 @@ namespace Cabbage_Manager_Classes
                 throw new SystemException(UI_Logic.errorRegistrationText);
             }
         }
+        public void AddHistoryItem(decimal amount, string bill, int categoryId)
+        {
+            var userbudget = userBudgets.FirstOrDefault(userB => userB.UserEmail == _authorizedUser.Email);
+            Context.TotalHistory.Add(new HistoryItem { Amount = amount, CategoryId = categoryId, Type = bill, UserEmail = _authorizedUser.Email, UserBudget=userbudget });
+            Save();
+        }
+
         public void Save()
         {
             Context.SaveChanges();

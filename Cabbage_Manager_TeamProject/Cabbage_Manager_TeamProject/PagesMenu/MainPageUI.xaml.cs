@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cabbage_Manager_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,11 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class MainPageUI : Page
     {
+        DbRepository _repo = Factory.Instance.GetRepository();
         public MainPageUI()
         {
             InitializeComponent();
+            LabelToolBar.Content = _repo._authorizedUser.Name;
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(10000);

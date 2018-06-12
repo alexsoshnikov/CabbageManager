@@ -21,10 +21,13 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class Adding_Expenses : Page
     {
+        DbRepository _repo = Factory.Instance.GetRepository();
+        UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
         public Adding_Expenses()
         {
             InitializeComponent();
             var repo = new RepositoryJson();
+            ComboBox_Choose.ItemsSource = new List<string> { "Cash", "Credit Card" };
             listBox_Category.ItemsSource = repo.categories; 
         }
 
@@ -32,40 +35,45 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         {
             try
             {
-                if (textBoxCalculate.Text.Contains('+') || textBoxCalculate.Text.Contains('-'))
-                {
-                    string[] sum = textBoxCalculate.Text.Split('+');
-                    for (int j = 0; j < sum.Length; j++)
-                    {
-                        if (sum[j].Contains('-'))
-                        {
-                            string[] devis = sum[j].Split('-');
-                            double f = Convert.ToDouble(devis[0]);
-                            for (int i = 1; i < devis.Length; i++)
-                            {
-                                f -= Convert.ToDouble(devis[i]);
-                            }
-                            sum[j] = Convert.ToString(f);
-                        }
-
-                    }
-
-                    double c = 0;
-                    for (int i = 0; i < sum.Length; i++)
-                    {
-                        c += Convert.ToDouble(sum[i]);
-                    }
-
-
-                    textBoxCalculate.Clear();
-                    textBoxCalculate.Text = c.ToString();
-                }
+                var result = _ui_logic.Calculate(textBoxCalculate.Text);
+                textBoxCalculate.Clear();
+                textBoxCalculate.Text = result.ToString();
             }
-
             catch (Exception)
             {
                 MessageBox.Show("Error!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void button_Ok_Click(object sender, RoutedEventArgs e)
+        {
+            if (_ui_logic.CheckAmountFormValid(textBoxCalculate.Text) == false)
+            {
+                MessageBox.Show("The number is incorrect. (It should be greater that 0.) \nTry to press <Amount> button.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (ComboBox_Choose.SelectedItem == null)
+                {
+                    MessageBox.Show("You should choose a bill from a combobox.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    if (listBox_Category.SelectedItem == null)
+                    {
+                        MessageBox.Show("You should choose a category.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        _repo.AddHistoryItem(Convert.ToDecimal(textBoxCalculate.Text), ComboBox_Choose.SelectedItem as String, (listBox_Category.SelectedItem as Category).Id);
+                        textBoxCalculate.Clear();
+                        ComboBox_Choose.SelectedItem = null;
+                        listBox_Category.SelectedItem = null;
+                        MessageBox.Show("Expense added!");
+                    }
+                }
+            }
+            
         }
     }
 }
