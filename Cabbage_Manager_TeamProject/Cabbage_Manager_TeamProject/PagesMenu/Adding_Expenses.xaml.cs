@@ -25,6 +25,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
         public Adding_Expenses()
         {
+            
             InitializeComponent();
             var repo = new RepositoryJson();
             ComboBox_Choose.ItemsSource = new List<string> { "Cash", "Credit Card" };
@@ -69,7 +70,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
                         textBoxCalculate.Clear();
                         ComboBox_Choose.SelectedItem = null;
                         listBox_Category.SelectedItem = null;
-                        MessageBox.Show("Expense added!");
+                        NavigationService.Navigate(new History());
                     }
                 }
             }

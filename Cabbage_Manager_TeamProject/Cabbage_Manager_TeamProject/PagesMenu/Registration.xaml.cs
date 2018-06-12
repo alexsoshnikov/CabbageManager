@@ -39,7 +39,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             try
             {
                 _repo.RegisterUser(_ui_logic.CreateNewUser(RegisterNameBox.Text, RegisterEmailBox.Text, RegisterPasswordBox.Password));
-                MessageBox.Show("You are successfully registered!");
+                MessageBox.Show("You are successfully registered!","Ready", MessageBoxButton.OK, MessageBoxImage.Asterisk );
                 if (_repo.Authorize(RegisterEmailBox.Text, RegisterPasswordBox.Password))
                 {
                     NavigationService.Navigate(new MainPageUI());

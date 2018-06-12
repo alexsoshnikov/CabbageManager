@@ -30,8 +30,25 @@
         <TextBlock  Grid.Column="1" Grid.ColumnSpan="5" Text ="Enter the amount of income" FontSize="20" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" VerticalAlignment="Center" />
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="textBoxCalculate" Grid.Column="1" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Grid.ColumnSpan="3" Grid.Row="1" Margin="8" FontSize="20" VerticalContentAlignment="Center"/>
         <Button Style="{StaticResource ButtonStyle}" Name="button_TakeAmount" Content="Amount" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" Margin="15,10,15,10" FontSize="20" VerticalContentAlignment="Center" Click="button_TakeAmount_Click"/>
-        <ComboBox Name="ComboBox_Choose" Text="Method of expenditure " Grid.ColumnSpan="5" FontFamily="Malgun Gothic"  Height="40" Foreground="#FFFD9804"  Grid.Row="2" Grid.Column="1" Margin="10"/>
+        <ComboBox Name="ComboBox_ChooseInc"  Grid.ColumnSpan="5" FontFamily="Malgun Gothic"  Height="40" Foreground="#FFFD9804"  Grid.Row="2" Grid.Column="1" Margin="10"/>
         <Button Style="{StaticResource ButtonStyle}"  Name="button_Ok" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Margin="15,0,15,15" FontSize="20" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Content="Ok" VerticalAlignment="Top"/>
+
+        <TextBlock IsHitTestVisible="False" Text="Method of expenditure"  TextAlignment="Left" Padding="5" Grid.ColumnSpan="5"  Foreground="#FFFD9804" Height="40" Grid.Row="2" Grid.Column="1" Margin="12,10,10,10" FontSize="20">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=ComboBox_ChooseInc}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ComboBox_ChooseInc, Path=IsFocused}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
 
     </Grid>
 </Page>

@@ -61,9 +61,9 @@
     <Compile Include="Classes\HistoryItem.cs" />
     <Compile Include="DbRepository.cs" />
     <Compile Include="Factory.cs" />
-    <Compile Include="Migrations\201806121014056_FirstModel.cs" />
-    <Compile Include="Migrations\201806121014056_FirstModel.Designer.cs">
-      <DependentUpon>201806121014056_FirstModel.cs</DependentUpon>
+    <Compile Include="Migrations\201806121916204_Model.cs" />
+    <Compile Include="Migrations\201806121916204_Model.Designer.cs">
+      <DependentUpon>201806121916204_Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +73,8 @@
     <Compile Include="UI_Logic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806121014056_FirstModel.resx">
-      <DependentUpon>201806121014056_FirstModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806121916204_Model.resx">
+      <DependentUpon>201806121916204_Model.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EmbeddedResource Include="Data\users.json" />

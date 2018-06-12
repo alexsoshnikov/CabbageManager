@@ -37,7 +37,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
 
 
             collection = new PieDataCollection<PieSegment>();
-            collection.CollectionName = "Foods";
+          
             collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#FF7F50"), Value = 100, Name = "Fruites" });
             collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#DB7093"), Value = 100, Name = "Fruites" });
             collection.Add(new PieSegment { Color = Colors.Red, Value = 10, Name = "Vegetables" });

@@ -46,5 +46,22 @@
         </ListBox>
         <Button Style="{StaticResource ButtonStyle}" Name="button_Ok" Grid.Column="2" Grid.ColumnSpan="3" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Grid.Row="6" Margin="15,0,15,15" FontSize="20" Content="Ok" VerticalAlignment="Top" Click="button_Ok_Click"/>
 
+        <TextBlock IsHitTestVisible="False" Text="Select a payment "  TextAlignment="Left" Padding="5" Grid.ColumnSpan="5"  Foreground="#FFFD9804" Height="40" Grid.Row="2" Grid.Column="1" Margin="12,10,10,10" FontSize="20">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=ComboBox_Choose}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ComboBox_Choose, Path=IsFocused}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
     </Grid>
 </Page>

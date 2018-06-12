@@ -26,6 +26,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         public Autorization()
         {
             InitializeComponent();
+            LoginEmailBox.Text = "alex@mail.ru";
+            LoginPasswordBox.Password = "123";
         }
 
         private void LoginSubmit_Click(object sender, RoutedEventArgs e)

@@ -7,13 +7,13 @@ namespace Cabbage_Manager_Classes.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class FirstModel : IMigrationMetadata
+    public sealed partial class Model : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Model));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806121014056_FirstModel"; }
+            get { return "201806121916204_Model"; }
         }
         
         string IMigrationMetadata.Source
