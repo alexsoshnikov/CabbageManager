@@ -14,8 +14,7 @@ namespace Cabbage_Manager_Classes
         public List<User> users { get; set; }
         public List<HistoryItem> historyItems { get; set; }
         public List<UserBudget> userBudgets { get; set; }
-
-        //поенять ссылки на те,чтов  папке data
+        
         private const string categoriesFileName = "..//..//..//Cabbage_Manager_Classes/Data/categories.json";
         private const string usersFileName = "..//..//..//Cabbage_Manager_Classes/Data/users.json";
         private const string historyItemsFileName = "..//..//..//Cabbage_Manager_Classes/Data/historyitems.json";
@@ -74,10 +73,10 @@ namespace Cabbage_Manager_Classes
             historyItems.Add(new HistoryItem { Id = 1, Amount = 10, CategoryId = 1, Type = "I", UserEmail= "alex@mail.ru" });
             historyItems.Add(new HistoryItem { Id = 2, Amount = 100, CategoryId = 1, Type = "E", UserEmail= "altyn@mail.ru" });
             SaveList(historyItemsFileName, historyItems);
-
+            
             users = new List<User>();
-            users.Add(new User { Id = 1, Name = "Alex", Password = "123", Email="alex@mail.ru" });
-            users.Add(new User { Id = 2, Name = "Altyn", Password = "123", Email = "altyn@mail.ru" });
+            users.Add(new User { Id = 1, Name = "Alex", Password = DbRepository.GetHash("123"), Email="alex@mail.ru" });
+            users.Add(new User { Id = 2, Name = "Altyn", Password = DbRepository.GetHash("123"), Email = "altyn@mail.ru" });
             SaveList(usersFileName, users);
             */
         }
@@ -85,7 +84,6 @@ namespace Cabbage_Manager_Classes
 
         private void Restore()
         {
-            // интернет добавить
             categories = RestoreList<Category>(categoriesFileName);
             users = RestoreList<User>(usersFileName);
             historyItems = RestoreList<HistoryItem>(historyItemsFileName);

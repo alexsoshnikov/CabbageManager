@@ -25,7 +25,8 @@ namespace Cabbage_Manager_TeamProject
         public MainWindow()
         {
             InitializeComponent();
-            var repository = new RepositoryJson();
+
+
         }
     }
 }

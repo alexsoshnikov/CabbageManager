@@ -59,6 +59,8 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\HistoryItem.cs" />
+    <Compile Include="DbRepository.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Migrations\201806112007557_First.cs" />
     <Compile Include="Migrations\201806112007557_First.Designer.cs">
       <DependentUpon>201806112007557_First.cs</DependentUpon>
@@ -68,6 +70,7 @@
     <Compile Include="RepositoryJson.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserBudget.cs" />
+    <Compile Include="UI_Logic.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806112007557_First.resx">
