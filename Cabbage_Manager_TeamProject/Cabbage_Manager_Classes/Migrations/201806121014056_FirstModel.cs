@@ -3,7 +3,7 @@ namespace Cabbage_Manager_Classes.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class FirstModel : DbMigration
     {
         public override void Up()
         {
