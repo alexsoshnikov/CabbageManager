@@ -3,7 +3,7 @@
     "Id": 1,
     "Name": "Food",
     "LinqToIcon": "/Design/Images/Food.PNG",
-    "ColourCode": "#FF7F50"
+    "ColourCode": "#DB7093"
   },
   {
     "Id": 2,
@@ -15,7 +15,7 @@
     "Id": 3,
     "Name": "Entertainment",
     "LinqToIcon": "/Design/Images/Entertainment.PNG",
-    "ColourCode": "#DB7093"
+    "ColourCode": "#2F4F4F"
   },
   {
     "Id": 4,
@@ -39,12 +39,36 @@
     "Id": 7,
     "Name": "The Internet",
     "LinqToIcon": "/Design/Images/Internet.PNG",
-    "ColourCode": "#4682B4"
+    "ColourCode": "#CD5C5C"
   },
   {
     "Id": 8,
     "Name": "Purchases",
     "LinqToIcon": "/Design/Images/Purchases.PNG",
-    "ColourCode": "#D2B48C"
+    "ColourCode": "#556B2F"
+  },
+  {
+    "Id": 51,
+    "Name": "-> Revenue",
+    "LinqToIcon": "/Design/Images/Cash.PNG",
+    "ColourCode": "#778899"
+  },
+  {
+    "Id": 52,
+    "Name": "-> Revenue",
+    "LinqToIcon": "/Design/Images/CreditCard.PNG",
+    "ColourCode": "#778899"
+  },
+  {
+    "Id": 61,
+    "Name": "Cash -> Card",
+    "LinqToIcon": "/Design/Images/Transaction.PNG",
+    "ColourCode": "#696969"
+  },
+  {
+    "Id": 62,
+    "Name": "Card -> Cash",
+    "LinqToIcon": "/Design/Images/Transaction.PNG",
+    "ColourCode": "#696969"
   }
 ]

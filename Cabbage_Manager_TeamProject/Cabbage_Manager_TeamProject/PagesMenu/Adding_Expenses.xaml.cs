@@ -27,9 +27,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         {
             
             InitializeComponent();
-            var repo = new RepositoryJson();
-            ComboBox_Choose.ItemsSource = new List<string> { "Cash", "Credit Card" };
-            listBox_Category.ItemsSource = repo.categories; 
+            listBox_Category.ItemsSource = _ui_logic.SelectOnlyExpenseCategories();
+            ComboBox_Choose.ItemsSource = _ui_logic.ComboBoxBillsItemSource();
         }
 
         private void button_TakeAmount_Click(object sender, RoutedEventArgs e)

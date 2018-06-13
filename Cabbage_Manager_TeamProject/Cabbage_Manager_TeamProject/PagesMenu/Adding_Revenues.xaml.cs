@@ -27,7 +27,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         public Adding_Revenues()
         {
             InitializeComponent();
-            ComboBox_ChooseInc.ItemsSource = new List<string> { "Cash", "Card" };
+            ComboBox_ChooseInc.ItemsSource = _ui_logic.ComboBoxBillsItemSource();
         }
 
         private void button_TakeAmount_Click(object sender, RoutedEventArgs e)
@@ -57,13 +57,11 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
                     MessageBox.Show("You should choose a bill from a combobox.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
-                {/* //добавление хистори айтем в виде дохода
-                    _repo.AddHistoryItem(Convert.ToDecimal(textBoxCalculate.Text), ComboBox_Choose.SelectedItem as String, (listBox_Category.SelectedItem as Category).Id);
+                {
+                    _repo.AddHisItem_SpecialForRevenues(Convert.ToDecimal(textBoxCalculate.Text), ComboBox_ChooseInc.SelectedItem as String);
                     textBoxCalculate.Clear();
-                    ComboBox_Choose.SelectedItem = null;
-                    listBox_Category.SelectedItem = null;
+                    ComboBox_ChooseInc.SelectedItem = null;
                     NavigationService.Navigate(new History());
-                */
                 }
             }
         }

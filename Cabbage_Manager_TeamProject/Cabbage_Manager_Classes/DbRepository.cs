@@ -79,7 +79,29 @@ namespace Cabbage_Manager_Classes
             Context.TotalHistory.Add(new HistoryItem { Amount = amount, CategoryId = categoryId, Type = bill, UserEmail = _authorizedUser.Email, UserBudget=userbudget });
             Save();
         }
+        public void AddHisItem_SpecialForRevenues(decimal amount, string bill)
+        {
+            var userbudget = userBudgets.FirstOrDefault(userB => userB.UserEmail == _authorizedUser.Email);
+            int catId=0;
+            if (bill == "Cash")
+                catId = 51;
+            if (bill == "Card")
+                catId = 52;
 
+            Context.TotalHistory.Add(new HistoryItem { Amount = amount, CategoryId = catId, Type = bill, UserEmail = _authorizedUser.Email, UserBudget = userbudget});
+            Save();
+        }
+        public void AddHisItem_SpecialForTransaction(decimal amount, string bill_from, string bill_to )
+        {
+            var userbudget = userBudgets.FirstOrDefault(userB => userB.UserEmail == _authorizedUser.Email);
+            int catId = 0;
+            if (bill_from == "Cash")
+                catId = 61;
+            if (bill_from == "Card")
+                catId = 62;
+            Context.TotalHistory.Add(new HistoryItem { Amount = amount, CategoryId = catId, Type = "", UserEmail = _authorizedUser.Email, UserBudget = userbudget });
+            Save();
+        }
         public void Save()
         {
             Context.SaveChanges();

@@ -100,8 +100,16 @@ namespace Cabbage_Manager_Classes
             return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
 
         }
-
-
+        public List<Category> SelectOnlyExpenseCategories()
+        {
+            var repo = new RepositoryJson();
+            List<Category> some = new List<Category>();
+            for (int i = 0; i < 7; i++)
+            {
+                some.Add(repo.categories[i]);
+            }
+            return some;
+        }
         public string FillInTransactionComboxes(string selected_item_here)
         {
             string selection_there = null ;
@@ -115,7 +123,7 @@ namespace Cabbage_Manager_Classes
             }
             return selection_there;
         }
-        public List<string> ComboBoxTransactionItemSource()
+        public List<string> ComboBoxBillsItemSource()
         {
             return new List<string> { "Cash", "Card" };
         }

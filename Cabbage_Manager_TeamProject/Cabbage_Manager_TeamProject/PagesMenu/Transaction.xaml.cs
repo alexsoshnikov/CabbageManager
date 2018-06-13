@@ -21,13 +21,13 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class Transaction : Page
     {
-
+        DbRepository _repo = Factory.Instance.GetRepository();
         UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
         public Transaction()
         {
             InitializeComponent();
-            ComboBox_From.ItemsSource = _ui_logic.ComboBoxTransactionItemSource();
-            ComboBox_To.ItemsSource = _ui_logic.ComboBoxTransactionItemSource();
+            ComboBox_From.ItemsSource = _ui_logic.ComboBoxBillsItemSource();
+            ComboBox_To.ItemsSource = _ui_logic.ComboBoxBillsItemSource();
         }
 
         private void ComboBox_From_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -59,13 +59,12 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
                         MessageBox.Show("You should choose a bill from a combobox.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     else
-                    {/*
-                        //добавление хистори айтем в виде дохода
-                        _repo.AddHistoryItem(Convert.ToDecimal(textBoxCalculate.Text), ComboBox_Choose.SelectedItem as String, (listBox_Category.SelectedItem as Category).Id);
-                        textBoxCalculate.Clear();
-                        ComboBox_Choose.SelectedItem = null;
-                        listBox_Category.SelectedItem = null;
-                        NavigationService.Navigate(new History()); */
+                    {
+                        _repo.AddHisItem_SpecialForTransaction(Convert.ToDecimal(textBoxAmountTransaction.Text), ComboBox_From.SelectedItem as String, ComboBox_To.SelectedItem as String);
+                        textBoxAmountTransaction.Clear();
+                        ComboBox_From.SelectedItem = null;
+                        ComboBox_To.SelectedItem = null;
+                        NavigationService.Navigate(new History());
                     }
                 }
             }
