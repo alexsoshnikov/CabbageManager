@@ -21,7 +21,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Reports" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Center" FontFamily="Malgun Gothic"  Foreground="#FF585555" FontWeight="Bold" FontSize="20" />
-        <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}"  Name="button_Month" Content="Month" Grid.Column="0" Grid.Row="1"  Margin="3" />
+        <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}"  Name="button_Month" Content="Month" Grid.Column="0" Grid.Row="1"  Margin="3" Click="button_Month_Click" />
         <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Week" Content="Week" Grid.Column="1" Grid.Row="1"  Margin="3"/>
         <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Day" Content="Day" Grid.Column="2" Grid.Row="1"  Margin="3" />
         <local1:PieControl x:Name="Pie_xaml" Width="170" Height="170"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,0,140" Grid.Row="2"/>

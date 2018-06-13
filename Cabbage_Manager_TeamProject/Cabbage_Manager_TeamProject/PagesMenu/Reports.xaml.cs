@@ -1,4 +1,5 @@
-﻿using Cabbage_Manager_TeamProject.PagesMenu.Charts;
+﻿using Cabbage_Manager_Classes;
+using Cabbage_Manager_TeamProject.PagesMenu.Charts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class Reports : Page
     {
+        UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
+
         public Reports()
         {
             DataContext = this;
@@ -34,10 +37,9 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
 
         void PopulateCharts()
         {
-
+            
 
             collection = new PieDataCollection<PieSegment>();
-          
             collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#FF7F50"), Value = 100, Name = "Fruites" });
             collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#DB7093"), Value = 100, Name = "Fruites" });
             collection.Add(new PieSegment { Color = Colors.Red, Value = 10, Name = "Vegetables" });
@@ -46,6 +48,15 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             collection.Add(new PieSegment { Color = Colors.Gold, Value = 8, Name = "Sweets" });
 
             Pie_xaml.Data = collection;
+
+        }
+
+        //Color = (Color) ColorConverter.ConvertFromString("#FF7F50")
+        private void button_Month_Click(object sender, RoutedEventArgs e)
+        {
+
+            //var collectionListHI = _ui_logic.GetHistoryForReports().ConvertAll(hi => )
+            
 
         }
     }
