@@ -118,7 +118,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PagesMenu\Charts\PieControl.xaml">
+    <Page Include="Design\PieControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,12 +153,9 @@
     <Compile Include="PagesMenu\Autorization.xaml.cs">
       <DependentUpon>Autorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PagesMenu\Charts\PieCollectionHelper.cs" />
-    <Compile Include="PagesMenu\Charts\PieControl.xaml.cs">
+    <Compile Include="Design\PieControl.xaml.cs">
       <DependentUpon>PieControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PagesMenu\Charts\PieDataCollection.cs" />
-    <Compile Include="PagesMenu\Charts\PieSegment.cs" />
     <Compile Include="PagesMenu\History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
     </Compile>
