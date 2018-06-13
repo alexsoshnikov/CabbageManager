@@ -100,7 +100,25 @@ namespace Cabbage_Manager_Classes
             return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
 
         }
-        
+
+
+        public string FillInTransactionComboxes(string selected_item_here)
+        {
+            string selection_there = null ;
+            if (selected_item_here == "Cash")
+            {
+                selection_there = "Card";
+            }
+            if (selected_item_here == "Card")
+            {
+                selection_there = "Cash";
+            }
+            return selection_there;
+        }
+        public List<string> ComboBoxTransactionItemSource()
+        {
+            return new List<string> { "Cash", "Card" };
+        }
 
     }
 }
