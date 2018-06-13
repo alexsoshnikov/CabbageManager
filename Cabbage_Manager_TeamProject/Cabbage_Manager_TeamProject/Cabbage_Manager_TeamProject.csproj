@@ -118,10 +118,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Design\PieControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PagesMenu\History.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +138,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PieControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PagesMenu\Adding_Expenses.xaml.cs">
@@ -152,9 +152,6 @@
     </Compile>
     <Compile Include="PagesMenu\Autorization.xaml.cs">
       <DependentUpon>Autorization.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Design\PieControl.xaml.cs">
-      <DependentUpon>PieControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="PagesMenu\History.xaml.cs">
       <DependentUpon>History.xaml</DependentUpon>
@@ -170,6 +167,9 @@
     </Compile>
     <Compile Include="PagesMenu\Transaction.xaml.cs">
       <DependentUpon>Transaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PieControl.xaml.cs">
+      <DependentUpon>PieControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -232,6 +232,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Design\Images\Entertainment.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Transaction.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\CreditCard.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\Images\Cash.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

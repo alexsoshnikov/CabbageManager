@@ -26,7 +26,6 @@ namespace Cabbage_Manager_TeamProject
         {
             InitializeComponent();
 
-
         }
     }
 }
