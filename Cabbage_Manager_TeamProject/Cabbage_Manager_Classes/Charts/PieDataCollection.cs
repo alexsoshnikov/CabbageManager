@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
+namespace Cabbage_Manager_Classes
 {
     public class PieDataCollection<T> : ObservableCollection<T> where T : PieSegment
     {

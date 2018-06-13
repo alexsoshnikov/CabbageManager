@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using Cabbage_Manager_Classes;
 
-namespace Cabbage_Manager_TeamProject.PagesMenu.Charts
+namespace Cabbage_Manager_Classes
 {
    public class PieSegment : INotifyPropertyChanged 
     {

@@ -100,6 +100,7 @@ namespace Cabbage_Manager_Classes
             return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
 
         }
+        
 
     }
 }
