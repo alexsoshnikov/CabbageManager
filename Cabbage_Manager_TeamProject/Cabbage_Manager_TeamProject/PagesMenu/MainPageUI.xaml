@@ -48,7 +48,7 @@
         <ComboBox Name="ComboBox_currentPay" SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" HorizontalAlignment="Right" Height="35" Width="200"  />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}"  HorizontalAlignment="Left" Grid.Column="1"  Background="#FFFD9804" />
         <Label x:Name="CurrentTime" HorizontalAlignment="Center" Grid.Column="1"  FontSize="20" Margin="3" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold"/>
-        <TextBlock IsHitTestVisible="False" Text="Select a payment "  Margin="0,0,33,2" TextAlignment="Left" Padding="5" Foreground="#FFFD9804" Height="35" FontSize="20" HorizontalAlignment="Right" >
+        <TextBlock IsHitTestVisible="False" Text="Select a payment "  Margin="0,2,47,0" TextAlignment="Left" Padding="5" Foreground="#FFFD9804" Height="35" FontSize="18" HorizontalAlignment="Right" >
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>

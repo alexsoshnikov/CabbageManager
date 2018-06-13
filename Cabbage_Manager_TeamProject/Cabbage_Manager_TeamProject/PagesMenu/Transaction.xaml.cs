@@ -70,5 +70,19 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
                 }
             }
         }
+
+        private void button_TakeAmount_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var result = _ui_logic.Calculate(textBoxAmountTransaction.Text);
+                textBoxAmountTransaction.Clear();
+                textBoxAmountTransaction.Text = result.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
