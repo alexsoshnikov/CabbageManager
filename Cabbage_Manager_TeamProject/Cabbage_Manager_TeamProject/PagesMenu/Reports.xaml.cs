@@ -1,6 +1,7 @@
 ﻿using Cabbage_Manager_Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,42 +22,41 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class Reports : Page
     {
-        UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
+        static UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
 
         public Reports()
         {
             DataContext = this;
             InitializeComponent();
+            TextBlock_DayWeekMonth.Text = "Month";
             PopulateCharts();
         }
-        List<PieDataCollection<PieSegment>> collectionList = new List<PieDataCollection<PieSegment>>();
 
-        PieDataCollection<PieSegment> collection;
+        ObservableCollection<PieSegment> collection = _ui_logic.GetInfoForMonthReport();
 
 
         void PopulateCharts()
         {
-            
-
-            collection = new PieDataCollection<PieSegment>();
-            collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#FF7F50"), Value = 100, Name = "Fruites" });
-            collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString("#DB7093"), Value = 100, Name = "Fruites" });
-            collection.Add(new PieSegment { Color = Colors.Red, Value = 10, Name = "Vegetables" });
-            collection.Add(new PieSegment { Color = Colors.DarkCyan, Value = 18, Name = "Meat" });
-            collection.Add(new PieSegment { Color = Colors.Wheat, Value = 20, Name = "Grains" });
-            collection.Add(new PieSegment { Color = Colors.Gold, Value = 8, Name = "Sweets" });
-
             Pie_xaml.Data = collection;
+        }
+        
+        private void button_Month_Click(object sender, RoutedEventArgs e)
+        {
+            TextBlock_DayWeekMonth.Text = "Month";
+            collection = _ui_logic.GetInfoForMonthReport();
+            PopulateCharts();
+        }
+
+        private void button_Week_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
-        //Color = (Color) ColorConverter.ConvertFromString("#FF7F50")
-        private void button_Month_Click(object sender, RoutedEventArgs e)
+        private void button_Day_Click(object sender, RoutedEventArgs e)
         {
-
-            //var collectionListHI = _ui_logic.GetHistoryForReports().ConvertAll(hi => )
-            
-
+            TextBlock_DayWeekMonth.Text = "Day";
+            collection = _ui_logic.GetInfoForDayReport();
+            PopulateCharts();
         }
     }
 }

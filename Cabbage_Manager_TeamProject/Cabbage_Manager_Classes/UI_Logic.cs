@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Cabbage_Manager_Classes
 {
@@ -94,10 +96,6 @@ namespace Cabbage_Manager_Classes
         public List<HistoryItem> ShowHistoryForCurrentUser()
         {
             return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).OrderByDescending(historyItem => historyItem.Date).ToList();
-        }
-        public List<HistoryItem> GetHistoryForReports()
-        {
-            return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
         }
         public List<Category> SelectOnlyExpenseCategories()
         {
@@ -224,5 +222,55 @@ namespace Cabbage_Manager_Classes
             return info;
         }
 
+        public List<HistoryItem> RetunOnlyExpenses()
+        {
+            UpdateHistory();
+            List<HistoryItem> exp = new List<HistoryItem>();
+            foreach (var his_it in ShowHistoryForCurrentUser())
+            {
+                if (his_it.CategoryId < 9)
+                {
+                    exp.Add(his_it);
+                }
+            }
+            return exp;
+        }
+        public List<HistoryItem> GetHistoryForReportsMonth()
+        {
+            return RetunOnlyExpenses().FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
+        }
+        public List<HistoryItem> GetHistoryForReportsWeek()
+        {
+            //return RetunOnlyExpenses().FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.);
+            return null;
+        }
+        public List<HistoryItem> GetHistoryForReportsDay()
+        {
+            return RetunOnlyExpenses().FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Day == DateTime.Now.Day);
+        }
+        public double CountSummForCategories(List<HistoryItem> history, int category)
+        {
+            double value = Convert.ToDouble(history.FindAll(h => h.CategoryId == category).Sum(h => h.Amount));
+            return value;
+        }
+
+        public ObservableCollection<PieSegment> GetInfoForMonthReport()
+        {
+            ObservableCollection<PieSegment> collection = new ObservableCollection<PieSegment>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString(category.ColourCode), Value = CountSummForCategories(GetHistoryForReportsMonth(), category.Id), Name = category.Name });
+            }
+            return collection;
+        }
+        public ObservableCollection<PieSegment> GetInfoForDayReport()
+        {
+            ObservableCollection<PieSegment> collection = new ObservableCollection<PieSegment>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString(category.ColourCode), Value = CountSummForCategories(GetHistoryForReportsDay(), category.Id), Name = category.Name });
+            }
+            return collection;
+        }
     }
 }
