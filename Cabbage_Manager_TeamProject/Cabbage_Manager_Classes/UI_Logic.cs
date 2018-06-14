@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cabbage_Manager_Classes.Charts;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -303,6 +304,33 @@ namespace Cabbage_Manager_Classes
                 collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString(category.ColourCode), Value = CountSummForCategories(GetHistoryForReportsWeek(), category.Id), Name = category.Name });
             }
             return collection;
+        }
+        public List<ReportListBoxRepresentation> FillListBoxMonth()
+        {
+            List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collectionForBox.Add(new ReportListBoxRepresentation {  Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsMonth(), category.Id), Category_name = category.Name });
+            }
+            return collectionForBox;
+        }
+        public List<ReportListBoxRepresentation> FillListBoxDay()
+        {
+            List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsDay(), category.Id), Category_name = category.Name });
+            }
+            return collectionForBox;
+        }
+        public List<ReportListBoxRepresentation> FillListBoxWeek()
+        {
+            List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsWeek(), category.Id), Category_name = category.Name });
+            }
+            return collectionForBox;
         }
     }
 }

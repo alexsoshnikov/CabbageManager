@@ -30,6 +30,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             InitializeComponent();
             TextBlock_DayWeekMonth.Text = "Month";
             PopulateCharts();
+            listBox_informationReports.ItemsSource = _ui_logic.FillListBoxMonth();
         }
 
         ObservableCollection<PieSegment> collection = _ui_logic.GetInfoForMonthReport();
@@ -50,6 +51,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             else
                 TextBlock_DayWeekMonth.Text = "Month";
             PopulateCharts();
+            listBox_informationReports.ItemsSource = null;
+            listBox_informationReports.ItemsSource = _ui_logic.FillListBoxMonth();
         }
 
         private void button_Week_Click(object sender, RoutedEventArgs e)
@@ -62,6 +65,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             else
                 TextBlock_DayWeekMonth.Text = "This Week (since Monday)";
             PopulateCharts();
+            listBox_informationReports.ItemsSource = null;
+            listBox_informationReports.ItemsSource = _ui_logic.FillListBoxWeek();
         }
 
         private void button_Day_Click(object sender, RoutedEventArgs e)
@@ -74,6 +79,8 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             else
                 TextBlock_DayWeekMonth.Text = "Today";
             PopulateCharts();
+            listBox_informationReports.ItemsSource = null;
+            listBox_informationReports.ItemsSource = _ui_logic.FillListBoxDay();
         }
     }
 }

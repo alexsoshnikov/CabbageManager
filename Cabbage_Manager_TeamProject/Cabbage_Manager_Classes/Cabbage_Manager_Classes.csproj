@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Charts\PieCollectionHelper.cs" />
     <Compile Include="Charts\PieSegment.cs" />
+    <Compile Include="Charts\ReportListBoxRepresentation.cs" />
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\HistoryItem.cs" />
