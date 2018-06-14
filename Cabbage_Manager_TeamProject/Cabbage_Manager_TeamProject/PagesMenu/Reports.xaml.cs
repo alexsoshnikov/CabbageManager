@@ -33,7 +33,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         }
 
         ObservableCollection<PieSegment> collection = _ui_logic.GetInfoForMonthReport();
-
+        
 
         void PopulateCharts()
         {
@@ -42,20 +42,37 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         
         private void button_Month_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock_DayWeekMonth.Text = "Month";
             collection = _ui_logic.GetInfoForMonthReport();
+            if (_ui_logic.CheckIfAllValuesZero(collection))
+            {
+                TextBlock_DayWeekMonth.Text = "No info for this period found";
+            }
+            else
+                TextBlock_DayWeekMonth.Text = "Month";
             PopulateCharts();
         }
 
         private void button_Week_Click(object sender, RoutedEventArgs e)
         {
-
+            collection = _ui_logic.GetInfoForWeekReport();
+            if (_ui_logic.CheckIfAllValuesZero(collection))
+            {
+                TextBlock_DayWeekMonth.Text = "No info for this period found";
+            }
+            else
+                TextBlock_DayWeekMonth.Text = "This Week (since Monday)";
+            PopulateCharts();
         }
 
         private void button_Day_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock_DayWeekMonth.Text = "Day";
             collection = _ui_logic.GetInfoForDayReport();
+            if (_ui_logic.CheckIfAllValuesZero(collection))
+            {
+                TextBlock_DayWeekMonth.Text = "No info for this period found";
+            }
+            else
+                TextBlock_DayWeekMonth.Text = "Today";
             PopulateCharts();
         }
     }

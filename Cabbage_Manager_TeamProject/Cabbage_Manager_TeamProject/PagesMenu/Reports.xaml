@@ -24,7 +24,7 @@
         <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Week" Content="Week" Grid.Column="1" Grid.Row="1"  Margin="3,3,3,0" Height="24" VerticalAlignment="Top" Click="button_Week_Click"/>
         <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Day" Content="Day" Grid.Column="2" Grid.Row="1"  Margin="3" Click="button_Day_Click" />
         <local2:PieControl x:Name="Pie_xaml" Width="170" Height="170"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,0,140" Grid.Row="2"/>
-        <TextBlock Name="TextBlock_DayWeekMonth" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Text ="" FontSize="20"  VerticalAlignment="Top"  Margin="3" HorizontalAlignment="Center" />
+        <TextBlock Name="TextBlock_DayWeekMonth" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Text ="" FontSize="20"  VerticalAlignment="Top"  Margin="3" HorizontalAlignment="Center" />
         <ListBox Style="{StaticResource ListBoxStyle}" VirtualizingPanel.ScrollUnit="Pixel" Name="listBox_informationReports" HorizontalAlignment="Center" Height="110" Width="390" Margin="3" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Grid.Column="0"  Grid.Row="2"/>
         
     </Grid>

@@ -241,8 +241,8 @@ namespace Cabbage_Manager_Classes
         }
         public List<HistoryItem> GetHistoryForReportsWeek()
         {
-            //return RetunOnlyExpenses().FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.);
-            return null;
+            DateTime startofweek = DateTime.Now.AddDays(-((DateTime.Now.DayOfWeek - DayOfWeek.Monday + 7) % 7)).Date;
+            return RetunOnlyExpenses().FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date >= startofweek);
         }
         public List<HistoryItem> GetHistoryForReportsDay()
         {
@@ -253,7 +253,23 @@ namespace Cabbage_Manager_Classes
             double value = Convert.ToDouble(history.FindAll(h => h.CategoryId == category).Sum(h => h.Amount));
             return value;
         }
-
+        public bool CheckIfAllValuesZero(ObservableCollection<PieSegment> collection)
+        {
+            bool isnull = false;
+            int i = 0;
+            foreach (var segment in collection)
+            {
+                if (segment.Value == 0)
+                {
+                    i++;
+                }
+           }
+            if (i == collection.Count)
+            {
+                isnull = true;
+            }
+            return isnull;
+        }
         public ObservableCollection<PieSegment> GetInfoForMonthReport()
         {
             ObservableCollection<PieSegment> collection = new ObservableCollection<PieSegment>();
@@ -269,6 +285,15 @@ namespace Cabbage_Manager_Classes
             foreach (var category in SelectOnlyExpenseCategories())
             {
                 collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString(category.ColourCode), Value = CountSummForCategories(GetHistoryForReportsDay(), category.Id), Name = category.Name });
+            }
+            return collection;
+        }
+        public ObservableCollection<PieSegment> GetInfoForWeekReport()
+        {
+            ObservableCollection<PieSegment> collection = new ObservableCollection<PieSegment>();
+            foreach (var category in SelectOnlyExpenseCategories())
+            {
+                collection.Add(new PieSegment { Color = (Color)ColorConverter.ConvertFromString(category.ColourCode), Value = CountSummForCategories(GetHistoryForReportsWeek(), category.Id), Name = category.Name });
             }
             return collection;
         }
