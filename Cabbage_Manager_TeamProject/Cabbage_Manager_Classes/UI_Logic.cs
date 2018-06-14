@@ -19,7 +19,7 @@ namespace Cabbage_Manager_Classes
         {
             if (!Emailcheck(email))
             {
-                errorRegistrationText += "- Email is not valid\n";
+                errorRegistrationText += "- Email is not valid or such user is already registered\n";
             }
             if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password))
             {
@@ -32,11 +32,18 @@ namespace Cabbage_Manager_Classes
             var user = new User { Name = name, Email = email, Password = DbRepository.GetHash(password), UserBudget = new UserBudget { UserEmail = email } };
             return user;
         }
-        
-        public static bool Emailcheck(string email)
+
+        public bool Emailcheck(string email)
         {
-            return Regex.IsMatch(email,
-             @"^[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            if (!_repo.users.Exists(u => u.Email == email))
+            {
+                return Regex.IsMatch(email,
+                 @"^[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            }
+            else
+            {
+                return false;
+            }
         }
         public decimal Calculate(string formula)
         {
