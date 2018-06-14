@@ -11,5 +11,6 @@ namespace Cabbage_Manager_Classes.Charts
         public string Category_name { get; set; }
         public double Amount { get; set; }
         public string Colour { get; set; }
+        public string LinqToIcon { get; set; }
     }
 }

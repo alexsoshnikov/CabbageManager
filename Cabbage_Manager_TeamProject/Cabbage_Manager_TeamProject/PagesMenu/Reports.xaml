@@ -25,14 +25,15 @@
         <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="button_Day" Content="Day" Grid.Column="2" Grid.Row="1"  Margin="3" Click="button_Day_Click" />
         <local2:PieControl x:Name="Pie_xaml" Width="170" Height="170"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,0,140" Grid.Row="2"/>
         <TextBlock Name="TextBlock_DayWeekMonth" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Text ="" FontSize="20"  VerticalAlignment="Top"  Margin="3" HorizontalAlignment="Center" />
-        <ListBox Style="{StaticResource ListBoxStyle}" VirtualizingPanel.ScrollUnit="Pixel" Name="listBox_informationReports" HorizontalAlignment="Center" Height="110" Width="312" Margin="3" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Grid.Column="0"  Grid.Row="2">
+        <ListBox Style="{StaticResource ListBoxStyle}" VirtualizingPanel.ScrollUnit="Pixel" Name="listBox_informationReports" HorizontalAlignment="Center" Height="110" Width="342" Margin="3" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Grid.Column="0"  Grid.Row="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Name="f">
                         <StackPanel.Background>
                             <SolidColorBrush Color="{Binding Colour}" />
                         </StackPanel.Background>
-                        <TextBlock Margin="3" FontSize="14" Width="180" Text="{Binding Category_name}"/>
+                        <Image Margin="3" Width="25" Height="25" Source ="{Binding LinqToIcon}"/>
+                        <TextBlock Margin="5 3 3 3" FontSize="14" Width="170" Text="{Binding Category_name}"/>
                         <TextBlock Margin="3" FontSize="14" Width="80" TextAlignment="Left" Text="{Binding Amount}"/>
                     </StackPanel>
                 </DataTemplate>

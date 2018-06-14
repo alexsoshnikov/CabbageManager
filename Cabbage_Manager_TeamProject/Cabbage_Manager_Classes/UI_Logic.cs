@@ -310,7 +310,7 @@ namespace Cabbage_Manager_Classes
             List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
             foreach (var category in SelectOnlyExpenseCategories())
             {
-                collectionForBox.Add(new ReportListBoxRepresentation {  Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsMonth(), category.Id), Category_name = category.Name });
+                collectionForBox.Add(new ReportListBoxRepresentation {  Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsMonth(), category.Id), Category_name = category.Name, LinqToIcon = category.LinqToIcon });
             }
             return collectionForBox;
         }
@@ -319,7 +319,7 @@ namespace Cabbage_Manager_Classes
             List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
             foreach (var category in SelectOnlyExpenseCategories())
             {
-                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsDay(), category.Id), Category_name = category.Name });
+                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsDay(), category.Id), Category_name = category.Name, LinqToIcon = category.LinqToIcon });
             }
             return collectionForBox;
         }
@@ -328,7 +328,7 @@ namespace Cabbage_Manager_Classes
             List<ReportListBoxRepresentation> collectionForBox = new List<ReportListBoxRepresentation>();
             foreach (var category in SelectOnlyExpenseCategories())
             {
-                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsWeek(), category.Id), Category_name = category.Name });
+                collectionForBox.Add(new ReportListBoxRepresentation { Colour = category.ColourCode, Amount = CountSummForCategories(GetHistoryForReportsWeek(), category.Id), Category_name = category.Name, LinqToIcon = category.LinqToIcon });
             }
             return collectionForBox;
         }
