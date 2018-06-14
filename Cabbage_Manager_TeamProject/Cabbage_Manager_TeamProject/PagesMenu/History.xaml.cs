@@ -22,6 +22,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     public partial class History : Page
     {
         UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
+        
 
         public History()
         {

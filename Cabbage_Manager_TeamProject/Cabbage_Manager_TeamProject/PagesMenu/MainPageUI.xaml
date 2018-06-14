@@ -10,9 +10,6 @@
     <Page.Background>
         <ImageBrush ImageSource="/Cabbage_Manager_TeamProject;component/Design/Images/depositphotos_27056871-stock-illustration-vector-seamless-pattern-with-finance.jpg"/>
     </Page.Background>
-
-
-
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -34,7 +31,7 @@
             <Separator  Background="#FFFD9804"/>
             <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Adding_Revenues" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Adding_Revenues_Click" >Adding Revenues</Button>
             <Separator  Background="#FFFD9804"/>
-            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Transaction" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Transaction_Click" >Transaction</Button>
+            <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Transaction" Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Transaction_Click" >Remittance</Button>
             <Separator  Background="#FFFD9804"/>
             <Button FontFamily="Malgun Gothic"  Foreground="#FFFD9804" Style="{StaticResource ButtonStyle}" Name="Button_Reports"  Height="50" Width="190" Margin="2" FontSize="17" Click="Button_Reports_Click" >Reports</Button>
             <Separator  Background="#FFFD9804"/>
@@ -48,7 +45,7 @@
         <ComboBox Name="ComboBox_currentPay" SelectedIndex="2"  Margin="130,3,3,3" FontSize="17" FontFamily="Malgun Gothic"  Foreground="#FFFD9804" HorizontalAlignment="Right" Height="35" Width="200"  />
         <Separator Style="{DynamicResource VerticalSeparatorStyle}"  HorizontalAlignment="Left" Grid.Column="1"  Background="#FFFD9804" />
         <Label x:Name="CurrentTime" HorizontalAlignment="Center" Grid.Column="1"  FontSize="20" Margin="3" FontFamily="Malgun Gothic"   Foreground="#FF585555" FontWeight="Bold"/>
-        <TextBlock IsHitTestVisible="False" Text="Select a payment "  Margin="0,2,47,0" TextAlignment="Left" Padding="5" Foreground="#FFFD9804" Height="35" FontSize="18" HorizontalAlignment="Right" >
+        <TextBlock IsHitTestVisible="False" Text="Balance Info "  Margin="0,2,47,0" TextAlignment="Left" Padding="5" Foreground="#FFFD9804" Height="35" FontSize="18" HorizontalAlignment="Right" >
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>

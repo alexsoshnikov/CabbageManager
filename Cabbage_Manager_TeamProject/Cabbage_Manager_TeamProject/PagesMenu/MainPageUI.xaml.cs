@@ -22,15 +22,18 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     /// </summary>
     public partial class MainPageUI : Page
     {
+        static UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
         DbRepository _repo = Factory.Instance.GetRepository();
         public MainPageUI()
         {
             InitializeComponent();
             LabelToolBar.Content = _repo._authorizedUser.Name;
+            ComboBox_currentPay.ItemsSource = _ui_logic.FillComboboxBalanse();
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(10000);
             dispatcherTimer.Start();
+            
         }
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
@@ -39,22 +42,36 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
 
         private void Button_History_Click(object sender, RoutedEventArgs e)
         {
-            ChangeableWindows.Content = new History();
+            var historyUI = new History();
+
+            ChangeableWindows.Content = historyUI;
+        }
+
+        public void UpdateBalance()
+        {
+            ComboBox_currentPay.ItemsSource = null;
+            ComboBox_currentPay.ItemsSource = _ui_logic.FillComboboxBalanse();
         }
 
         private void Button_Adding_Expenses_Click(object sender, RoutedEventArgs e)
         {
-            ChangeableWindows.Content = new Adding_Expenses();
+            var addExpUI = new Adding_Expenses();
+            ChangeableWindows.Content = addExpUI;
+            addExpUI.HistoryInitialised1 += UpdateBalance;
         }
 
         private void Button_Adding_Revenues_Click(object sender, RoutedEventArgs e)
         {
-            ChangeableWindows.Content = new Adding_Revenues();
+            var addRevUI = new Adding_Revenues();
+            ChangeableWindows.Content = addRevUI;
+            addRevUI.HistoryInitialised2 += UpdateBalance;
         }
 
         private void Button_Transaction_Click(object sender, RoutedEventArgs e)
         {
-            ChangeableWindows.Content = new Transaction();
+            var trUI = new Transaction();
+            ChangeableWindows.Content = trUI;
+            trUI.HistoryInitialised3 += UpdateBalance;
         }
 
         private void Button_Reports_Click(object sender, RoutedEventArgs e)

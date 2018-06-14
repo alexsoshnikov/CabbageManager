@@ -23,6 +23,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
     {
         DbRepository _repo = Factory.Instance.GetRepository();
         UI_Logic _ui_logic = Factory.Instance.GetUiLogic();
+        public event Action HistoryInitialised3;
         public Transaction()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         {
             if (_ui_logic.CheckAmountFormValid(textBoxAmountTransaction.Text) == false)
             {
-                MessageBox.Show("The number is incorrect. (It should be greater that 0.) \nTry to press <Amount> button.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("The number is incorrect. (It should be greater that 0.) \nTry to press <Count> button.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -65,6 +66,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
                         ComboBox_From.SelectedItem = null;
                         ComboBox_To.SelectedItem = null;
                         NavigationService.Navigate(new History());
+                        HistoryInitialised3?.Invoke();
                     }
                 }
             }

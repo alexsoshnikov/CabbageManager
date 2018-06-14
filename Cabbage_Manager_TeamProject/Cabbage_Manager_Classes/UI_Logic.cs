@@ -98,7 +98,6 @@ namespace Cabbage_Manager_Classes
         public List<HistoryItem> GetHistoryForReports()
         {
             return _repo.historyItems.FindAll(hi => hi.UserEmail == _repo._authorizedUser.Email).FindAll(f => f.Date.Month == DateTime.Now.Month);
-
         }
         public List<Category> SelectOnlyExpenseCategories()
         {
@@ -126,6 +125,103 @@ namespace Cabbage_Manager_Classes
         public List<string> ComboBoxBillsItemSource()
         {
             return new List<string> { "Cash", "Card" };
+        }
+        public decimal PlusOrMinusMoneyInTotalBalanse(HistoryItem _hi)
+        {
+            decimal summ_part = 0;
+            if (_hi.CategoryId<9)
+            {
+                summ_part = Decimal.Negate(_hi.Amount);
+            }
+            if (_hi.CategoryId == 51 || _hi.CategoryId == 52)
+            {
+                summ_part = _hi.Amount;
+            }
+            return summ_part;
+        }
+        public decimal GetTotalBalance()
+        {
+            decimal summ = 0;
+            foreach (var historyItem in ShowHistoryForCurrentUser())
+            {
+                summ += PlusOrMinusMoneyInTotalBalanse(historyItem);
+            }
+            return summ;
+        }
+        public decimal GetCashBalance()
+        {
+            decimal summ = 0;
+            foreach (var historyItem in ShowHistoryForCurrentUser())
+            {
+                summ += PlusOrMinusMoneyInCashBalance(historyItem);
+            }
+            return summ;
+        }
+        public decimal PlusOrMinusMoneyInCashBalance(HistoryItem _hi)
+        {
+            decimal summ_part = 0;
+            if (_hi.CategoryId < 9)
+            {
+                if (_hi.Type == "Cash")
+                {
+                    summ_part = Decimal.Negate(_hi.Amount);
+                }
+            }
+            if (_hi.CategoryId == 51)
+            {
+                summ_part = _hi.Amount;
+     
+            }
+            if (_hi.CategoryId == 61)
+            {
+                summ_part = Decimal.Negate(_hi.Amount);
+            }
+            if (_hi.CategoryId == 62)
+            {
+                summ_part = _hi.Amount;
+            }
+            return summ_part;
+        }
+        public decimal GetCardBalance()
+        {
+            decimal summ = 0;
+            foreach (var historyItem in ShowHistoryForCurrentUser())
+            {
+                summ += PlusOrMinusMoneyInCardBalance(historyItem);
+            }
+            return summ;
+        }
+        public decimal PlusOrMinusMoneyInCardBalance(HistoryItem _hi)
+        {
+            decimal summ_part = 0;
+            if (_hi.CategoryId < 9)
+            {
+                if (_hi.Type == "Card")
+                {
+                    summ_part = Decimal.Negate(_hi.Amount);
+                }
+            }
+            if (_hi.CategoryId == 52)
+            {
+                summ_part = _hi.Amount;
+            }
+            if (_hi.CategoryId == 62)
+            {
+                summ_part = Decimal.Negate(_hi.Amount);
+            }
+            if (_hi.CategoryId == 61)
+            {
+                summ_part = _hi.Amount;
+            }
+            return summ_part;
+        }
+        public List<string> FillComboboxBalanse()
+        {
+            List<string> info = new List<string>();
+            info.Add("Total Balance: " + GetTotalBalance().ToString());
+            info.Add("Cash Balance: " + GetCashBalance().ToString());
+            info.Add("Card Balance: " + GetCardBalance().ToString());
+            return info;
         }
 
     }
