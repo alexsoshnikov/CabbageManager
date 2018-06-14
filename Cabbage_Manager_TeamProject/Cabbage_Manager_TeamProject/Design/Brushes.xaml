@@ -69,40 +69,7 @@
             <GradientStop Color="#FFDDDDDD" Offset="0" />
         </RadialGradientBrush>
 
-        <!-- Brush for ToggleButton Occupado-->
 
-        <RadialGradientBrush x:Key="ToggleButtonBorderBrush_forOccupado" GradientOrigin="0,0" RadiusX="0.8" RadiusY="0.8">
-            <GradientStop Color="#FF7D7D7D" Offset="1"></GradientStop>
-            <GradientStop Color="#FF535353" Offset="0"></GradientStop>
-        </RadialGradientBrush>
-
-        <RadialGradientBrush x:Key="ToggleButtonBackgroundON_forOccupado" GradientOrigin="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-            <GradientStop Color="#FFF18C10" Offset="1"></GradientStop>
-            <GradientStop Color="#FFFBC95B" Offset="0"></GradientStop>
-        </RadialGradientBrush>
-
-        <SolidColorBrush x:Key="ToggleButtonBorderBrushON_forOccupado" Color="#FFFDC64F"/>
-
-        <LinearGradientBrush x:Key="ToggleButtonBackgroundOFF_forOccupado" EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF969696" Offset="0"/>
-            <GradientStop Color="#FF767676" Offset="1"/>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="ToggleButtonBorderBrushOFF_forOccupado" EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF888888" Offset="1"/>
-            <GradientStop Color="#FF979797"/>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="ToggleButtonBackBackground_forOccupado" EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF434343" Offset="0"/>
-            <GradientStop Color="#FF838383" Offset="1"/>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="ToggleButtonBackBorderBrush_forOccupado" EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF353535" Offset="1"/>
-            <GradientStop Color="#FF1B1B1B"/>
-        </LinearGradientBrush>
-        <!---->
     
     <LinearGradientBrush x:Key="ScrollBarThumbBackground" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#FFF1DC7A" Offset="0"/>
@@ -214,8 +181,7 @@
 
         <!-- Const -->
 
-        <system:String x:Key="ToggleButtonGO">GO</system:String>
-        <system:String x:Key="ToggleButtonSTOP">STOP</system:String>
+       
         <controls:Thickness x:Key="BorderThicknessButton">0</controls:Thickness>
         <controls:Thickness x:Key="BorderThicknessButtonOutline">1,1,0,0</controls:Thickness>
         <controls:Thickness x:Key="ThicknessButtonVisual">0</controls:Thickness>

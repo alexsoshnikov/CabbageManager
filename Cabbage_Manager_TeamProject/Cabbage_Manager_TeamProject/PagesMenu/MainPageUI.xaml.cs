@@ -1,22 +1,13 @@
 ﻿using Cabbage_Manager_Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Cabbage_Manager_TeamProject.PagesMenu
 {
+
     /// <summary>
     /// Логика взаимодействия для MainPageUI.xaml
     /// </summary>
@@ -26,6 +17,7 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         DbRepository _repo = Factory.Instance.GetRepository();
         public MainPageUI()
         {
+
             InitializeComponent();
             LabelToolBar.Content = _repo._authorizedUser.Name;
             ComboBox_currentPay.ItemsSource = _ui_logic.FillComboboxBalanse();
@@ -79,9 +71,11 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             ChangeableWindows.Content = new Reports();
         }
 
+     
         private void Button_Change_User_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Do you really want to change the user?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            
+            MessageBoxResult result = MessageBox.Show("Do you really want to change the user?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Question );
 
             if (result == MessageBoxResult.Yes)
             {
@@ -93,5 +87,6 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
             }
 
         }
+
     }
 }

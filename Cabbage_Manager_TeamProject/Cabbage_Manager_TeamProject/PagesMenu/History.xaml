@@ -32,7 +32,7 @@
                         <TextBlock Margin="5" FontSize="14" Width="75" Text="{Binding DateRepresentation}"/>
                         <TextBlock Margin="5" FontSize="14" Width="35" Text="{Binding Type}"/>
                         <TextBlock Margin="5" FontSize="14" Width="90" Text="{Binding Category.Name}"/>
-                        <TextBlock Margin="5" FontSize="14" Width="85" Text="{Binding Amount}"/>
+                        <TextBlock Margin="5" FontSize="14" Width="68" Text="{Binding Amount}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

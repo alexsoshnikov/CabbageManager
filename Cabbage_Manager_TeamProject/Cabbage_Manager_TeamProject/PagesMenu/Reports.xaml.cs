@@ -28,7 +28,15 @@ namespace Cabbage_Manager_TeamProject.PagesMenu
         {
             DataContext = this;
             InitializeComponent();
-            TextBlock_DayWeekMonth.Text = "Month";
+            collection = _ui_logic.GetInfoForMonthReport();
+            if (_ui_logic.CheckIfAllValuesZero(collection))
+            {
+                TextBlock_DayWeekMonth.Text = "No info for this period found";
+            }
+            else
+            {
+                TextBlock_DayWeekMonth.Text = "Month";
+            }
             PopulateCharts();
             listBox_informationReports.ItemsSource = _ui_logic.FillListBoxMonth();
         }

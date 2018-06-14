@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Cabbage_Manager_TeamProject.PagesMenu"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="600"
-      Title="MainPageUI" >
+      Title="MainPageUI" Language="en-En" >
     <Page.Background>
         <ImageBrush ImageSource="/Cabbage_Manager_TeamProject;component/Design/Images/depositphotos_27056871-stock-illustration-vector-seamless-pattern-with-finance.jpg"/>
     </Page.Background>
